@@ -12,7 +12,10 @@ const MainPage = () => {
     ]
 
     return (
-        <><p>MainPage</p></>
+            btnType.map((btn) => {
+                return <NewsButton text={btn.text} iconSrc={btn.imageUrl}></NewsButton>
+            }
+        )
     )
 }
 
