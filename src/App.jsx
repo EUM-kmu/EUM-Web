@@ -1,14 +1,17 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Main from './pages/Main'
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Container } from "./styles";
+import Main from "./pages/Main";
 
-function App() {
+const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Main />} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
+    <Container>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />} />
+        </Routes>
+      </BrowserRouter>
+    </Container>
+  );
+};
 
 export default App;
