@@ -13,6 +13,8 @@ export const ImageCard = styled.img.attrs((props) => ({
 `;
 
 export const Text = styled.p`
+  font-size: ${(props) => props.fontSize};
+  font-weight: ${(props) => props.fontWeight || 400};
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

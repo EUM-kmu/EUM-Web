@@ -5,7 +5,7 @@ const NewsCard = ({ imgSrc, title }) => {
   return (
     <Container>
       <ImageCard imgSrc={imgSrc} />
-      <Text>{title}</Text>
+      <Text fontSize={"16px"}>{title}</Text>
     </Container>
   );
 };
