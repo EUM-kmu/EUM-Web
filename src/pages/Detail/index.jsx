@@ -1,9 +1,14 @@
 /* eslint-disable react/prop-types */
 import { useLocation } from "react-router-dom";
 import BackButton from "../../components/BackButton";
+import { useEffect } from "react";
 
 const PostDetail = () => {
   const post = useLocation().state;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

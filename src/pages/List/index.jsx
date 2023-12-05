@@ -4,6 +4,7 @@ import news2 from "../../assets/dummy_news_2.png";
 import news3 from "../../assets/dummy_news_3.png";
 import news4 from "../../assets/dummy_news_4.png";
 import PostItem from "../../components/PostItem";
+import { useEffect } from "react";
 
 const allNews = [
   {
@@ -185,6 +186,10 @@ const allNews = [
 ];
 
 const ListPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="flex flex-col p-4">
       <BackButton text={"우리 마을 최신 소식"} />

@@ -8,6 +8,7 @@ import PostHeader from "../../components/PostHeader";
 import PostItem from "../../components/PostItem";
 import location from "../../assets/location_on.svg";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const news = [
   {
@@ -70,6 +71,10 @@ const LocationBadge = ({ text }) => {
 
 const Main = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="flex flex-col p-5 gap-3">
