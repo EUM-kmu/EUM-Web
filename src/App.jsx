@@ -3,6 +3,7 @@ import { Container } from "./styles";
 import Main from "./pages/Main";
 import Notion from "./pages/Notion";
 import PostDetail from "./pages/Detail";
+import ListPage from "./pages/List";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route path="/" element={<Main />} />
           <Route path="/detail" element={<PostDetail />} />
           <Route path="/help" element={<Notion />} />
+          <Route path="/list" element={<ListPage />} />
         </Routes>
       </BrowserRouter>
     </Container>
