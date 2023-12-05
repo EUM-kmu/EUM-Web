@@ -81,9 +81,9 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="flex flex-col p-5 gap-3">
-      <LocationBadge text={"정릉제2동"} />
-      <div>
+    <>
+      <div className="flex flex-col p-5 gap-3">
+        <LocationBadge text={"정릉제2동"} />
         <PostHeader title={"우리 마을 최신 소식"} />
         <div className="divide-y divide-[#E5E5EA]">
           {news.map((info, index) => {
@@ -102,10 +102,12 @@ const Main = () => {
               />
             );
           })}
+          <div className="pb-2" />
         </div>
       </div>
+      <div className="h-[5px] bg-[#d9dee4]"></div>
 
-      <div className="flex flex-col ">
+      <div className="flex flex-col px-5 pb-4">
         <PostHeader title={"이웃들이 관심있게 본 공고"} />
         <NewsCardsView>
           {news.map((info, index) => {
@@ -124,7 +126,7 @@ const Main = () => {
           })}
         </NewsCardsView>
       </div>
-    </div>
+    </>
   );
 };
 
