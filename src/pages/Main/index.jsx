@@ -16,6 +16,7 @@ const news = [
     title: "오월첫동네 플리마켓",
     start: "2023년 11월 18일(수)",
     end: "2023년 11월 20일(금)",
+    time: 2,
     host: "성북구청",
     organization: "성북 행복어울림센터",
     introduction:
@@ -27,6 +28,7 @@ const news = [
     title: "제 15회 성북세계음식축제 누리마실",
     start: "2023년 11월 18일(수)",
     end: "2023년 11월 20일(금)",
+    time: 3,
     host: "성북구청",
     organization: "성북 행복어울림센터",
     introduction:
@@ -39,6 +41,7 @@ const news = [
     start: "2023년 11월 18일(수)",
     end: "2023년 11월 20일(금)",
     host: "성북구청",
+    time: 3,
     organization: "성북 행복어울림센터",
     introduction:
       "5월에 전남대 대학로에서 만난 네친구! 용이, 봉이, 상이, 흥이 네친구가 전하는 전대 대학로이야기 들어 보실래요? 오월첫동네 플리마켓 '제로웨이스트데이'를 통해 환경을 생각하고 가치 있는 소비를 실천하고 싶은 분들의 많은 관심과 참여 부탁드립니다.",
@@ -50,6 +53,7 @@ const news = [
     start: "2023년 11월 18일(수)",
     end: "2023년 11월 20일(금)",
     host: "성북구청",
+    time: 5,
     organization: "성북 행복어울림센터",
     introduction:
       "5월에 전남대 대학로에서 만난 네친구! 용이, 봉이, 상이, 흥이 네친구가 전하는 전대 대학로이야기 들어 보실래요? 오월첫동네 플리마켓 '제로웨이스트데이'를 통해 환경을 생각하고 가치 있는 소비를 실천하고 싶은 분들의 많은 관심과 참여 부탁드립니다.",
@@ -84,7 +88,18 @@ const Main = () => {
         <div className="divide-y divide-[#E5E5EA]">
           {news.map((info, index) => {
             return (
-              <PostItem key={index} imgSrc={info.imgSrc} title={info.title} />
+              <PostItem
+                key={index}
+                imgSrc={info.imgSrc}
+                title={info.title}
+                location={info.location}
+                time={info.time}
+                onClick={() => {
+                  navigate("/detail", {
+                    state: { ...info },
+                  });
+                }}
+              />
             );
           })}
         </div>
