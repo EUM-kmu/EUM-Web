@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import BackButton from "../../components/BackButton";
 
 const PostDetail = () => {
-  const post = useLocation();
+  const post = useLocation().state;
 
   return (
     <div className="flex flex-col p-4">
