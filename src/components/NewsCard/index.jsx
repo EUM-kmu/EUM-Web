@@ -3,7 +3,7 @@ import { Container, ImageCard, Text } from "./styles";
 
 const NewsCard = ({ imgSrc, title }) => {
   return (
-    <Container>
+    <Container className="cursor-pointer">
       <ImageCard imgSrc={imgSrc} />
       <Text fontSize={"16px"}>{title}</Text>
     </Container>
