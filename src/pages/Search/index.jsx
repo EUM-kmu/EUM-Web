@@ -72,8 +72,24 @@ const SearchPage = () => {
         </div>
       ) : (
         <div className="flex-1">
-          <p>&rsquo;{searchTerm}&rsquo; 검색 결과</p>
-          <div>검색 결과 보여질 목록</div>
+          <p className="p-4 text-base font-bold">
+            &rsquo;{searchTerm}&rsquo; 검색 결과
+          </p>
+          <div>
+            {Object.entries(filteredData).map(([city, districts]) =>
+              Object.entries(districts).map(([district, dongs]) =>
+                dongs.map((dong, index) => (
+                  <div
+                    className="p-4 text-xl font-regular cursor-pointer"
+                    key={index}
+                    onClick={() => {
+                      setSearchTerm(`${city} ${district} ${dong}`);
+                    }}
+                  >{`${city} ${district} ${dong}`}</div>
+                ))
+              )
+            )}
+          </div>
         </div>
       )}
     </div>
