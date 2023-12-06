@@ -82,7 +82,10 @@ const Main = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    locationInfo.dong !== "" ? setCurrentDong(locationInfo.dong) : null;
+    console.log(locationInfo.dong);
+    locationInfo.dong != undefined
+      ? setCurrentDong(locationInfo.dong)
+      : setCurrentDong("정릉제2동"); // 기본 동네는 정릉제2동
   }, [locationInfo.dong]);
 
   return (
