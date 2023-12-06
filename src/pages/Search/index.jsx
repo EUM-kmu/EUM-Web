@@ -3,8 +3,10 @@ import removeIcon from "../../assets/remove_icon.svg";
 import { useState } from "react";
 import BackButton from "../../components/BackButton";
 import seoulDistrictsData from "../../data/seoulDistrictsData.json";
+import { useNavigate } from "react-router-dom";
 
 const SearchPage = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const searchHandler = (event) => {
     setSearchTerm(event.target.value);
@@ -84,6 +86,9 @@ const SearchPage = () => {
                     key={index}
                     onClick={() => {
                       setSearchTerm(`${city} ${district} ${dong}`);
+                      navigate("/", {
+                        state: { dong },
+                      });
                     }}
                   >{`${city} ${district} ${dong}`}</div>
                 ))

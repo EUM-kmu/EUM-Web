@@ -8,8 +8,8 @@ import PostHeader from "../../components/PostHeader";
 import PostItem from "../../components/PostItem";
 import searchIcon from "../../assets/black_search_icon.svg";
 import location from "../../assets/location_on.svg";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const news = [
   {
@@ -76,16 +76,20 @@ const LocationBadge = ({ text }) => {
 
 const Main = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const locationInfo = { ...location.state };
+  const [currentDong, setCurrentDong] = useState("정릉제2동");
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    locationInfo.dong !== "" ? setCurrentDong(locationInfo.dong) : null;
+  }, [locationInfo.dong]);
 
   return (
     <>
       <div className="flex flex-col p-5 gap-3">
         <div className="flex justify-between">
-          <LocationBadge text={"정릉제2동"} />
+          <LocationBadge text={currentDong} />
           <img
             className="cursor-pointer"
             src={searchIcon}
