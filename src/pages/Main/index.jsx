@@ -6,6 +6,7 @@ import news3 from "../../assets/dummy_news_3.png";
 import news4 from "../../assets/dummy_news_4.png";
 import PostHeader from "../../components/PostHeader";
 import PostItem from "../../components/PostItem";
+import searchIcon from "../../assets/black_search_icon.svg";
 import location from "../../assets/location_on.svg";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -83,7 +84,16 @@ const Main = () => {
   return (
     <>
       <div className="flex flex-col p-5 gap-3">
-        <LocationBadge text={"정릉제2동"} />
+        <div className="flex justify-between">
+          <LocationBadge text={"정릉제2동"} />
+          <img
+            className="cursor-pointer"
+            src={searchIcon}
+            onClick={() => {
+              navigate("/search");
+            }}
+          />
+        </div>
         <PostHeader title={"우리 마을 최신 소식"} />
         <div className="divide-y divide-[#E5E5EA]">
           {news.map((info, index) => {
