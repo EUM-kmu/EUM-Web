@@ -9,7 +9,7 @@ import arrow from "../../assets/left_arrow.svg";
 const SearchBackButton = ({ text }) => {
   const navigate = useNavigate();
   return (
-    <div className="sticky top-0">
+    <div className="sticky top-0 py-2">
       <div className="flex justify-between items-center py-2">
         <div className="w-6 h-6 flex justify-center items-center">
           <img
@@ -69,9 +69,9 @@ const SearchPage = () => {
   console.log(filteredData);
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen p-5">
       <SearchBackButton text="마을 변경" />
-      <div className="flex p-2 w-full bg-[#f2f2f7] gap-[6px] items-center">
+      <div className="flex p-2 w-full bg-[#f2f2f7] gap-[6px] items-center rounded-[10px]">
         <img src={searchIcon} />
         <input
           className="flex-1 bg-[#f2f2f7] outline-none text-[#8E8E93]"
