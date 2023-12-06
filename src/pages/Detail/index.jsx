@@ -42,7 +42,7 @@ const PostDetail = () => {
       </div>
       <div className="h-[5px] bg-[#d9dee4]"></div>
       <div className="py-4 px-6">
-        <img src={post.imgSrc} />
+        <img className="w-full" src={post.imgSrc} />
       </div>
     </>
   );
