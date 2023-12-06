@@ -1,9 +1,31 @@
 import searchIcon from "../../assets/search_icon.svg";
 import removeIcon from "../../assets/remove_icon.svg";
 import { useState } from "react";
-import BackButton from "../../components/BackButton";
 import seoulDistrictsData from "../../data/seoulDistrictsData.json";
 import { useNavigate } from "react-router-dom";
+import arrow from "../../assets/left_arrow.svg";
+
+// eslint-disable-next-line react/prop-types
+const SearchBackButton = ({ text }) => {
+  const navigate = useNavigate();
+  return (
+    <div className="sticky top-0">
+      <div className="flex justify-between items-center py-2">
+        <div className="w-6 h-6 flex justify-center items-center">
+          <img
+            className="cursor-pointer"
+            src={arrow}
+            onClick={() => {
+              navigate(-1); // 뒤로 가기
+            }}
+          />
+        </div>
+        <p className="text-xl font-bold">{text}</p>
+        <div className="w-6" />
+      </div>
+    </div>
+  );
+};
 
 const SearchPage = () => {
   const navigate = useNavigate();
@@ -48,7 +70,7 @@ const SearchPage = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <BackButton text="마을 변경" />
+      <SearchBackButton text="마을 변경" />
       <div className="flex p-2 w-full bg-[#f2f2f7] gap-[6px] items-center">
         <img src={searchIcon} />
         <input
