@@ -1,6 +1,7 @@
 import searchIcon from "../../assets/search_icon.svg";
 import removeIcon from "../../assets/remove_icon.svg";
 import { useState } from "react";
+import BackButton from "../../components/BackButton";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -11,6 +12,7 @@ const SearchPage = () => {
 
   return (
     <div className="flex flex-col h-screen">
+      <BackButton text="마을 변경" />
       <div className="flex p-2 w-full bg-[#f2f2f7] gap-[6px] items-center">
         <img src={searchIcon} />
         <input
@@ -19,7 +21,13 @@ const SearchPage = () => {
           onChange={searchHandler}
           placeholder="나의 마을(동, 읍, 면) 검색"
         />
-        <img className="cursor-pointer" src={removeIcon} />
+        <img
+          className="cursor-pointer"
+          src={removeIcon}
+          onClick={() => {
+            setSearchTerm("");
+          }}
+        />
       </div>
 
       {searchTerm === "" ? (
