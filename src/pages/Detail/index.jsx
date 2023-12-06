@@ -19,11 +19,12 @@ const PostDetail = () => {
         <div className="divide-y divide-[#E5E5EA]">
           <div className="flex flex-col py-2 gap-[6px]">
             <p className="text-base font-bold">행사 기간</p>
-            <div className="flex gap-2">
+            <div className="flex justify-between">
               <p>
-                {post.start} - {post.end}
+                {post.start} -<br />
+                {post.end}
               </p>
-              <div className="rounded-[4px] px-[5px] bg-[#F2F2F7] text-[#8E8E93]">
+              <div className="rounded-[4px] max-h-6 px-[5px] bg-[#F2F2F7] text-[#8E8E93]">
                 D-14
               </div>
             </div>
